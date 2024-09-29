@@ -1,0 +1,814 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(184, 91%, 17%);
+  --clr-primary-2: hsl(185, 84%, 25%);
+  --clr-primary-3: hsl(185, 81%, 29%);
+  --clr-primary-4: hsl(184, 77%, 34%);
+  /* primary/main color */
+  --clr-primary-5: hsl(185, 62%, 45%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(185, 57%, 50%);
+  --clr-primary-7: hsl(184, 65%, 59%);
+  --clr-primary-8: hsl(184, 80%, 74%);
+  --clr-primary-9: hsl(185, 94%, 87%);
+  --clr-primary-10: hsl(186, 100%, 94%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+
+  /*Primary Colors  */
+  --clr-red-1: rgb(181, 17, 17);
+  --clr-red-2: rgb(188, 43, 43);
+  --clr-red-3: rgb(190, 93, 93);
+  --clr-red-4: rgb(230, 154, 154);
+
+  /* gray colors */
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+
+  /* yellow colors for heading */
+  --clr-yellow-1: rgb(255, 251, 8);
+  --clr-yellow-2: rgb(242, 235, 43);
+  --clr-yellow-3: rgb(228, 223, 79);
+  --clr-yellow-4: rgb(238, 233, 85);
+
+  --clr-white: #fff;
+  --ff-primary: "Lato", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-primary);
+  background: var(--clr-white);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img:not(.IIT-logo) {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+.btn {
+  text-transform: uppercase;
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  /* font-weight: 700; */
+  transition: var(--transition);
+  font-size: 0.875rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.btn:hover {
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-8);
+}
+.section {
+  padding: 5rem 0;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-title h2 {
+  text-transform: uppercase;
+}
+.section-title span {
+  color: var(--clr-primary-5);
+}
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+
+.topic-img-container {
+  position: relative;
+}
+
+.clearfix::after,
+.clearfix::before {
+  content: " ";
+  clear: both;
+  display: table;
+}
+/*
+=============== 
+Navbar
+===============
+*/
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    var(--clr-yellow-1),
+    var(--clr-yellow-2),
+    var(--clr-yellow-3)
+  );
+  box-shadow: var(--dark-shadow);
+  z-index: 2;
+}
+.nav-icons {
+  display: none;
+}
+.nav-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.nav-toggle {
+  background: transparent;
+  border: transparent;
+  font-size: 1.5rem;
+  color: var(--clr-primary-5);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.nav-toggle:hover {
+  transform: scale(1.2);
+}
+.nav-link {
+  display: block;
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  transition: transform 0.6s ease-in-out;
+  color: var(--clr-red-1);
+  cursor: pointer;
+  font-size: 1rem;
+}
+.nav-link:hover {
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-8);
+  padding-left: 2.25rem;
+  /* border-top: 0.15rem solid var(--clr-primary-1); */
+}
+/* 280px */
+/* .nav-links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.show-links {
+  height: 280px;
+} */
+@media screen and (min-width: 0px) {
+  /* hide toggle button */
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .nav-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* optional */
+    flex-wrap: wrap;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+  }
+  .nav-header {
+    padding: 0 0;
+  }
+  .nav-link {
+    padding: 0 0;
+    margin-right: 0.7rem;
+  }
+  .nav-link:hover {
+    padding: 0;
+    color: var(--clr-primary-5);
+    background: transparent;
+  }
+  .nav-icons {
+    display: flex;
+  }
+  .nav-icon {
+    margin-right: 0.7rem;
+    color: var(--clr-primary-5);
+    font-size: 1.2rem;
+    transition: var(--transition);
+  }
+  .nav-icon:hover {
+    color: var(--clr-primary-8);
+  }
+}
+/*
+=============== 
+Hero
+===============
+*/
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images_website/homepage_fig/homefig.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-banner {
+  text-align: center;
+  color: var(--clr-white);
+  padding: 0 3rem;
+}
+.hero-banner h1 {
+  text-transform: uppercase;
+}
+.hero-banner h2 {
+  max-width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--clr-white);
+  letter-spacing: var(--spacing);
+}
+.hero-btn {
+  padding: 0.9rem 1.6rem;
+  font-size: 1.25rem;
+  background: var(--clr-white);
+  color: var(--clr-primary-5);
+}
+.hero-btn:hover {
+  background: transparent;
+  color: var(--clr-white);
+  border-color: var(--clr-white);
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
+      url("../images_website/homepage_fig/homefig.jpg") center/cover no-repeat;
+  }
+  .hero-banner {
+    padding: 0;
+  }
+  .hero-banner p {
+    max-width: 45rem;
+  }
+}
+
+/* Content Divider */
+/* content-divider */
+.content-divider {
+  height: 0.5rem;
+  background: linear-gradient(
+    to left,
+    var(--clr-primary-1),
+    var(--clr-yellow-1)
+  );
+}
+
+.content-divider-1 {
+  height: 0.5rem;
+  background: linear-gradient(
+    to left,
+    var(--clr-primary-1),
+    var(--clr-yellow-1)
+  );
+  margin-top: -2rem;
+}
+
+/* 
+==================
+Topic
+=================
+*/
+
+.topics {
+  background: var(--clr-yellow-4);
+}
+
+.topics-title {
+  padding: 2rem;
+  margin-top: 0;
+  margin-bottom: -2rem;
+  text-align: center;
+}
+
+.topic-card {
+  margin: 2rem 0;
+  background: var(--clr-grey-10);
+  border-radius: var(--radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: var(--transition);
+}
+
+.topic-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.topic-img {
+  height: 10rem;
+  object-fit: cover;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.topic-info {
+  text-align: center;
+  padding: 3rem 2rem 2.5rem 1rem;
+}
+
+.topic-info h4 {
+  font-size: 1rem;
+  letter-spacing: normal;
+}
+
+.topic-btn {
+  font-size: 0.75;
+  text-transform: capitalize;
+  padding: 0.375rem 0.5rem;
+  border-radius: var(--radius);
+  font-weight: 400;
+  margin-top: 1.25rem;
+}
+
+@media screen and (min-width: 768px) {
+  .topic-card {
+    float: left;
+    width: 45%;
+    margin-right: 5%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .topic-card {
+    width: 16%;
+    margin-right: 0.65%;
+  }
+}
+
+.topic-img-container {
+  position: relative;
+}
+
+.highlight-title {
+  text-decoration: underline red;
+}
+
+.highlight-title::first-letter {
+  color: red; /* Change the color of the first letter */
+  font-weight: bold; /* Optionally make the first letter bold */
+  font-size: 1.5em; /* Optionally increase the size of the first letter */
+}
+
+/* 
+=============== 
+Footer
+===============
+ */
+
+.footer {
+  background: var(--clr-grey-1);
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  /* margin-top: -2rem; */
+}
+
+.footer-one {
+  width: 30%;
+}
+
+.footer-links,
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.footer-link {
+  color: var(--clr-white);
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin-right: 1rem;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+}
+.footer-link:hover {
+  color: var(--clr-primary-5);
+}
+.footer-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: var(--clr-primary-8);
+  transition: var(--transition);
+}
+.footer-icon:hover {
+  color: var(--clr-primary-5);
+}
+.copyright {
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  color: var(--clr-white);
+}
+
+.footer {
+  background: var(--clr-red-4);
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.footer-links,
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.footer-link {
+  color: var(--clr-white);
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin-right: 1rem;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+}
+.footer-link:hover {
+  color: var(--clr-primary-5);
+}
+.footer-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: var(--clr-primary-8);
+  transition: var(--transition);
+}
+.footer-icon:hover {
+  color: var(--clr-primary-5);
+}
+.copyright {
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  color: var(--clr-white);
+}
+
+.IIT-logo {
+  width: 70%;
+}
+
+.contact-info {
+  color: var(--clr-grey-1);
+}
+
+.contact-email {
+  color: var(--clr-grey-1);
+}
+
+.footer-one {
+  display: flex;
+  padding: 1rem;
+}
+
+footer.section {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Centers the content */
+}
+
+.footer-one {
+  display: flex;
+  width: 60%; /* Container width to hold both text and images */
+  justify-content: space-between;
+}
+
+.footer-text {
+  width: 30%; /* Footer text takes up 30% */
+}
+
+.contact-info {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.contact-email {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.footer-images {
+  display: flex;
+  flex-direction: column; /* Align images vertically within the container */
+  gap: 20px; /* Add space between the two images */
+  width: 30%; /* Footer images take up 30% */
+}
+
+.footer-img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+footer.section {
+  background-color: var(--clr-red-4);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Centers the content */
+}
+
+.footer-one {
+  display: flex;
+  width: 80%; /* Adjusted container width to fit the text and two image containers */
+  justify-content: space-between;
+}
+
+.footer-text {
+  width: 30%; /* Footer text takes up 30% */
+}
+
+/* .IIT-logo {
+  width: 100px;
+  margin-bottom: 10px;
+} */
+
+.contact-info {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.contact-email {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.footer-image-one {
+  display: flex;
+  flex-direction: column; /* Stack images vertically in each image container */
+  justify-content: space-between;
+  width: 30%; /* Each image container (set of images) takes up 30% */
+  height: 30%;
+  gap: 10px; /* Space between images in the container */
+}
+
+.footer-img {
+  width: 100%;
+  height: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* 
+==================
+Schedule Section
+==================
+*/
+
+.schedule {
+  background: var(--clr-yellow-4);
+}
+
+.schedule-title {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-decoration: underline red;
+}
+
+.schedule-title::first-letter {
+  color: red; /* Change the color of the first letter */
+  font-weight: bold; /* Optionally make the first letter bold */
+  font-size: 1.5em; /* Optionally increase the size of the first letter */
+}
+
+.schedule {
+  background-color: var(
+    --clr-yellow-4
+  ); /* Yellow background for the table section */
+  padding: 20px; /* Optional: padding inside the section */
+  margin-bottom: 30px; /* Space after the table */
+}
+
+table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* margin-bottom: 1rem; */
+}
+
+thead {
+  background-color: #fff9c4; /* Light yellow */
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center; /* Center-align text */
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Light grey */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff; /* White */
+}
+
+/* Hover effect only on tbody rows */
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+th {
+  font-size: 16px;
+}
+
+td {
+  font-size: 14px;
+}
+
+/* 
+==========================
+Lectures
+==========================
+*/
+.lecture-card {
+  background-color: #d1e9c3;
+  border: 1px solid #d1e9c3;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80vw; /* Set a width for the block card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 2rem; /* Add space between each card */
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* Align each card in the center */
+}
+
+.lecture-card:hover {
+  transform: scale(1.02);
+  background: rgb(240, 201, 201);
+  /* border: 0.2rem solid red; */
+}
+
+.lecture-info h3,
+.lecture-info h4 {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.lectures {
+  padding: 20px; /* Add some padding around the lecture section */
+  text-align: center; /* Ensure all content is centered */
+  background: var(--clr-yellow-4);
+}
+
+.lectures-title {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 1rem;
+}
+
+.highlight-title {
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Icon styling */
+.lecture-icons {
+  display: flex;
+  justify-content: center; /* Center the icons */
+  gap: 1rem;
+  padding-top: 10px;
+  margin-left: 1rem;
+  color: red;
+}
+
+.lecture-icons a {
+  text-decoration: none;
+  color: red; /* Default icon color */
+  font-size: 20px;
+}
+
+.lecture-icons a:hover {
+  color: #0073e6; /* Change icon color on hover */
+}
