@@ -35,3 +35,9 @@ scrollLinks.forEach(link => {
     });
   });
 });
+
+// ********** show message ************
+// Function to display an alert when the YouTube icon is clicked
+function showMessage() {
+  alert("No video available now.");
+}
